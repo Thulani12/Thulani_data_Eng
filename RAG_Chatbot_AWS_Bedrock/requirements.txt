@@ -1,7 +1,0 @@
-pandas
-streamlit
-boto3
-kafka-python
-pyspark
-apache-airflow
-langchain

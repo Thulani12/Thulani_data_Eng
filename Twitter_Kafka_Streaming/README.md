@@ -1,8 +1,3 @@
-# Project README
+# Twitter Kafka Streaming
 
-producer.py: Python script using Tweepy or Twitter API to push tweets to Kafka
-
-consumer.py: Python script consuming Kafka topic and printing/storing tweets
-
-config.json: Config template for Kafka settings
-
+This project streams tweets using Twitter API and pushes them to Kafka.

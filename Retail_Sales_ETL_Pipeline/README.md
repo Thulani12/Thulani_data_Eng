@@ -1,12 +1,3 @@
-# Project README
+# Retail Sales ETL Pipeline
 
-etl_pipeline.py: Python script to:
-
-Read CSV
-
-Clean data (drop nulls, format dates, calculate totals)
-
-Write cleaned data to new CSV or load to AWS S3
-
-data/sample_sales.csv: Sample dataset
-
+This Python script ingests retail sales data, cleans it, aggregates totals, and loads it into AWS S3.
