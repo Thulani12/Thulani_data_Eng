@@ -1,0 +1,33 @@
+import os
+import openai
+from aifoundry.core import AIFoundry
+
+# Set your Azure OpenAI endpoint and key
+AZURE_OPENAI_ENDPOINT = os.getenv('AZURE_OPENAI_ENDPOINT')
+AZURE_OPENAI_KEY = os.getenv('AZURE_OPENAI_KEY')
+
+# Initialize AI Foundry client
+ai_foundry = AIFoundry(
+    endpoint=AZURE_OPENAI_ENDPOINT,
+    api_key=AZURE_OPENAI_KEY
+)
+
+# Define chatbot prompt
+def get_chatbot_response(user_input):
+    response = ai_foundry.chat(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "You are a helpful AI assistant."},
+            {"role": "user", "content": user_input}
+        ]
+    )
+    return response['choices'][0]['message']['content']
+
+if __name__ == "__main__":
+    print("Azure AI Foundry Chatbot is running. Type 'exit' to quit.")
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() == "exit":
+            break
+        reply = get_chatbot_response(user_input)
+        print(f"Bot: {reply}")
